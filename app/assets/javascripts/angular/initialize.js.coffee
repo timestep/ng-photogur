@@ -13,13 +13,13 @@
   $locationProvider.html5Mode(true)
 
   # Set up the application routes. This is similar to Rails' /config/routes.rb
-  $routeProvider
-  .when("/",                  templateUrl: "pictures/index")
-  .when('/pictures',          templateUrl: "pictures/index")
-  .when('/pictures/:id',      templateUrl: "pictures/show")
-  .when('/pictures/new',      templateUrl: "pictures/new")
-  .when('/pictures/:id/edit', templateUrl: "pictures/edit")
-  .otherwise(template: "Page not found.")
+$routeProvider
+	.when("/",                  templateUrl: "pictures/index", controller: "PicturesController")
+	.when('/pictures',          templateUrl: "pictures/index", controller: "PicturesController")
+	.when('/pictures/new',      templateUrl: "pictures/new",   controller: "PicturesController")
+	.when('/pictures/:id',      templateUrl: "pictures/show",  controller: "PictureController")
+	.when('/pictures/:id/edit', templateUrl: "pictures/edit",  controller: "PictureController")
+	.otherwise(template: "Page not found.")
 
 @photogur.run ['$window', '$templateCache', ($window, $templateCache) ->
 # Load the hamlc templates into the angular template cache when angular 
