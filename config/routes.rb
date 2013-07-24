@@ -6,6 +6,8 @@ NgPhotogur::Application.routes.draw do
   end
   
   root :to => 'static#root'
+
+  match '*anything' => 'static#root'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
