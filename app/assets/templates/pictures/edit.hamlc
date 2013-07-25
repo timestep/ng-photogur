@@ -1,1 +1,22 @@
-edit.hamlc
+.row
+  .span6
+    %h1 Editing {{picture.title}}
+    %form
+      %p
+        %label Title
+        %input{:type => "text", :ng-model => "picture.title"}
+      %p
+        %label Artist
+        %input{:type => "text", :ng-model => "picture.artist"}
+      %p
+        %label URL
+        %input{:type => "text", :ng-model => "picture.url"}
+
+      .form-actions
+        %input.btn.btn-primary{:type => "submit", :ng-click => "updatePicture()"}
+        
+  .span6
+    .well{:ng-show => "picture.artist || picture.title || picture.url"}
+      %h2 {{picture.title}}
+      %p{:ng-show => "picture.artist"} by {{picture.artist}}
+      %img{:ng-src => "{{picture.url}}"}

@@ -10,13 +10,16 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 
+// VENDOR LIBRARIES
 //= require jquery
 //= require jquery_ujs
 //= require angular.min
 //= require angular-resource.min
 //= require angle-up
-//= require_tree ./angular
 //= require hamlcoffee
+
+// APPLICATION FILES
 //= require_tree ../templates
 //= require ./angular/initialize
+//= require_tree ./angular
 //= require_tree .

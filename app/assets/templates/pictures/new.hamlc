@@ -1,14 +1,23 @@
-%h1 New Picture
-%form
-  %p
-    %label Title
-    %input{:type => "text"}
-  %p
-    %label Author
-    %input{:type => "text"}
-  %p
-    %label URL
-    %input{:type => "text"}
+.row
+  .span6
+    %h1 New Picture
+    %p There is now a total of {{pictures.length}} pictures.
+    %form
+      %p
+        %label Title
+        %input{:type => "text", :ng-model => "picture.title"}
+      %p
+        %label Artist
+        %input{:type => "text", :ng-model => "picture.artist"}
+      %p
+        %label URL
+        %input{:type => "text", :ng-model => "picture.url"}
 
-  %p 
-    %input{:type => "submit", :ng-click => "createPicture()"}
+      .form-actions
+        %input.btn.btn-primary{:type => "submit", :ng-click => "createPicture()"}
+
+  .span6
+    .well{:ng-show => "picture.artist || picture.title || picture.url"}
+      %h2 {{picture.title}}
+      %p{:ng-show => "picture.artist"} by {{picture.artist}}
+      %img{:ng-src => "{{picture.url}}"}
