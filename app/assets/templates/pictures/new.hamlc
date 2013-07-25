@@ -1,1 +1,14 @@
-new.hamlc
+%h1 New Picture
+%form
+  %p
+    %label Title
+    %input{:type => "text"}
+  %p
+    %label Author
+    %input{:type => "text"}
+  %p
+    %label URL
+    %input{:type => "text"}
+
+  %p 
+    %input{:type => "submit", :ng-click => "createPicture()"}
